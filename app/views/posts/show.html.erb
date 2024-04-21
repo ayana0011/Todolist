@@ -1,20 +1,82 @@
 <div class="main posts-show">
   <div class="container">
     <div class="posts-show-item">
-    <p>
-      <%= @post.content %>
+    
+      <p>
+      <span style="font-size:2.5em;"><%= @post.content %></span>点
       </p>
-      <div class="post-time">
-      投稿時間
-        <%= l @post.created_at %>
-        <% if @post.updated_at != @post.created_at %>
-        <div class="updated-time">
-        編集時間
-        <%= l @post.updated_at %>
-        </div>
-        <% end %>
       
+      <h1>飲料水</h1>
+      <h2><%= @post.water %>L / 21L</h2>
+      
+      <h1>レトルトご飯</h1>
+      <h2><%= @post.rice %>食 / 21食</h2>
+      <h1>レトルト食品</h1>
+      <h2><%= @post.food %>個 / 7個 </h2>
+      <h1>缶詰(鯖の味噌煮、野菜など)</h1>
+      <h2><%= @post.can %>缶 / 7缶 </h2>
+      <h1>調味料セット</h1>
+      
+      <% if @post.seasonal == 0 %> <h2>なし / 適宜 </h2><% end %>
+      <% if @post.seasonal == 1 %> <h2>あり / 適宜 </h2><% end %>
+     
+      
+      <h1>乾麺(カップラーメンなど)</h1>
+      <h2><%= @post.ramen %>パック / 7パック </h2>
 
+      <h1>お菓子</h1>
+      <% if @post.snack == 0 %> <h2>なし / 適宜 </h2><% end %>
+      <% if @post.snack == 1 %>aaa <h2>あり / 適宜</h2><% end %>
+
+      <h1>除菌ウエットティッシュ</h1>
+      <h2><%= @post.wettissue %>枚 / 70枚 </h2>
+
+      <h1>アルコールスプレー</h1>
+      <h2><%= @post.spray %>本 / 1本 </h2>
+      <h1>マスク</h1>
+      <h2><%= @post.mask %>枚 / 7枚 </h2>
+
+      <h1>救急箱</h1>
+      <% if @post.box == 0 %> <h2>なし / 1箱 </h2> <% end %>
+
+      <% if @post.box != 0 %> <h2>あり / 1箱</h2> <% end %>
+  
+      <h1>常備薬</h1>
+      <% if @post.medicine == 0 %> <h2>なし / 適宜 </h2><% end %>
+      <% if @post.medicine != 0 %> <h2>あり / 適宜</h2><% end %>
+  
+      <h1>簡易トイレ</h1>
+      <h2><%= @post.toilet %>回分 / 35回分 </h2>
+      <h1>生理用品</h1>
+      <h2><%= @post.period %>個セット / 30個セット </h2>
+
+      <h1>ラップ</h1>
+      <h2><%= @post.wrappingfilm %>本 / 1本 </h2>
+      <h1>ポリ袋</h1>
+      <h2><%= @post.plasticbags %>箱 / 1箱 </h2>
+      <h1>アルミホイル</h1>
+      <h2><%= @post.alumi %>本 / 1本 </h2>
+      <h1>ビニール手袋</h1>
+      <h2><%= @post.plasticgloves %>箱 / 1箱 </h2>
+      <h1>トイレットペーパー</h1>
+      <h2><%= @post.toiletpaper %>ロール / 3ロール</h2>
+      <h1>ティッシュペーパー</h1>
+      <h2><%= @post.tissue %>箱 / 3箱 </h2>
+      <h1>懐中電灯</h1>
+      <% if @post.light == 0 %> <h2>なし / 1個 </h2><% end %>
+      <% if @post.light != 0 %> <h2>あり / 1個</h2><% end %>
+      
+      <h1>乾電池</h1>
+      <h2><%= @post.battery %>本 / 5本 </h2>
+      <h1>ガムテープ</h1>
+      <h2><%= @post.tape %>個 / 2個 </h2>
+      <h1>給水袋</h1>
+      <% if @post.waterbag == 0 %> <h2>なし / 1個 </h2><% end %>
+      <% if @post.waterbag != 0 %> <h2>あり / 1個</h2><% end %>
+
+      <div class="post-time">
+      受験時間
+        <%= l @post.created_at %>
 
         <% if @post.user_id == @current_user.id %>
         <div class="post-menus">
@@ -24,7 +86,7 @@
         <%= link_to("削除", "/posts/#{@post.id}/destroy" ,method: :post) %>
         </div>
         <% end %>
-
+        
       </div>
     </div>
   </div>

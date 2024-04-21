@@ -4,9 +4,35 @@
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
       <% if @user.id == @current_user.id %>
-
-      <%= link_to("編集","/users/#{@user.id}/edit") %>
+      <%= link_to("ユーザー情報編集","/users/#{@user.id}/edit") %>
       <% end %>
-    </div>
+      </div>
+
+      <h2>点数をクリックして各品目を何個備蓄していたか確認しましょう！</h2>
+
+
+    <div class="container">
+      <% @post.each do |post| %>
+        <div class="posts-index-item">
+        <div class="post-right">
+      <p>受験時間
+        <%= l post.created_at %></p>
+       
+        <li>
+        <%= link_to(post.content  , "/posts/#{post.id}", class:"post") %>
+        
+        </li>
+        <div class="post-left">
+        <p>
+        点
+        </p>
+        </div>
+
+            </div>
+            </div>
+      <% end %>
+      
+
+   
   </div>
 </div>

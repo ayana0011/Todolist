@@ -1,19 +1,94 @@
   <div class="main posts-index">
-    <div class="container">
+  <!--いらない
+  
+  <div class="container">
       <% @post.each do |post| %>
         <div class="posts-index-item">
-        <div class="post-left">
+        <div class="post-lefta">
         <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
-        <%= link_to("finished", "/likes/#{post.id}/destroy") %>
+        <%= link_to("☑︎", "/likes/#{post.id}/destroy") %>
           <% else %>
-          <%= link_to("not yet", "/likes/#{post.id}/create") %>
+          <%= link_to("□", "/likes/#{post.id}/create") %>
             <% end %>
             </div>
             <div class="post-right">
             <%= link_to(post.content, "/posts/#{post.id}") %>
             </div>
         
+       </div>
+      <% end %>
+    </div> 
+    
+    ところ
+    
+    -->
+
+
+     
+    <div class="container">
+    <p> 食料 
+      <% @food.each do |food| %>
+        <div class="posts-index-item">
+        <div class="post-lefta">
+        <% if Like.find_by(user_id: @current_user.id, food_id: food.id) %>
+        <%= link_to("☑︎", "/likes/#{food.id}/fdestroy") %>
+          <% else %>
+          <%= link_to("□", "/likes/#{food.id}/fcreate") %>
+            <% end %>
+            </div>
+        <div class="post-right">
+            <%= food.item %>
+            <%= food.number %>
+          </div>
+        
         </div>
       <% end %>
-    </div>
+     
+  </div>
+
+ 
+  <div class="container"> 
+  <p>衛生用品
+      <% @sanitary.each do |sanitary| %>
+       
+        <div class="posts-index-item">
+        <div class="post-lefta">
+              <% if Like.find_by(user_id: @current_user.id, sanitary_id: sanitary.id) %>
+                  <%= link_to("☑︎", "/likes/#{sanitary.id}/sdestroy") %>
+             <% else %>
+            <%= link_to("□", "/likes/#{sanitary.id}/screate") %>
+            <% end %>
+          </div>
+          <div class="post-right">
+            <%= sanitary.item %>
+            <%= sanitary.number %>
+            </div>
+        
+        </div>
+      <% end %>
+      
+      </div>
+
+     
+     
+      <div class="container"> 
+      <p>生活用品
+      <% @household.each do |household| %>
+        <div class="posts-index-item">
+        <div class="post-lefta">
+        <% if Like.find_by(user_id: @current_user.id, household_id: household.id) %>
+        <%= link_to("☑︎", "/likes/#{household.id}/hdestroy") %>
+          <% else %>
+          <%= link_to("□", "/likes/#{household.id}/hcreate") %>
+            <% end %>
+            </div>
+            <div class="post-right">
+            <%= household.item %>
+            <%= household.number %>
+            </div>
+        
+        </div>
+      <% end %>
+
+    
   </div>

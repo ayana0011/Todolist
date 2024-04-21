@@ -21,8 +21,14 @@
     font-size: 14px;
   }
   
-  h1, h2, h3, h4, h5, h6, p {
+  h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    font-weight: 500;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 100;
   }
   
   input {
@@ -38,7 +44,7 @@
   /* 共通レイアウト ================================ */
   body {
     color: #2d3133;
-    background-color: #3e8acd;
+    background-color: #6692a8;
     margin: 0;
     min-height: 1vh;
   }
@@ -58,6 +64,7 @@
     padding-left: 15px;
     padding-right: 15px;
     clear: both;
+    
   }
   
   /* ヘッダー ================================ */
@@ -65,7 +72,7 @@
     height: 64px;
     position: absolute;
     z-index: 1;
-    background-color: #3e40cd;
+    background-color: #433ecd;
     width: 100%;
   }
   
@@ -124,7 +131,7 @@
     height: auto;
     min-height: 100%;
     color: white;
-    background-color: #3ecdc6;
+    background-color: #5b8b9f;
     background-repeat: no-repeat;
     background-position: center 50%;
     background-size: cover;
@@ -135,15 +142,90 @@
   }
   
   .top-main h2 {
-    font-size: 70px;
+    font-size: 100px;
     font-weight: 500;
     line-height: 1.3;
     -webkit-font-smoothing: antialiased;
+    margin-bottom: 10px;
+  }
+
+  .top-about {
+    background-color: #8cc5e1;
+    margin:  150px;
+    text-align: center;
+    padding: 100px;
+
+  }
+
+  .top-about h1 {
+    background-color: #8cc5e1;
+    font-size: 30;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    min-width:  100px;
+    -webkit-font-smoothing: antialiased;
     margin-bottom: 20px;
   }
+
+  .top-about h2 {
+    background-color: #8cc5e1;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 1.3;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 20px;
+  }
+
+
+  .top-about p {
+    background-color: #8cc5e1;
+    font-size: 10px;
+    font-weight: 100;
+  }
+
+  .top-about ul, li {
+    list-style-type: none;
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+    color: white;
+  }
+
+  .top-about-right img {
+    background-color: #8cc5e1;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+    
+   
+  }
+
+  .top-about-left {
+    background-color: #8cc5e1;
+    float: left;
+   width: 40%;
+  }
+
+  .top-show-item {
+    padding: 30px;
+    overflow: hidden;
+  }
+
+  .top-show form {
+    display: inline;
+  }
+  
+
   
   .top-main p {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .top-img {
+    width: 84%;
   }
   
   /* about ================================ */

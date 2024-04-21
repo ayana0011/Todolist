@@ -1,11 +1,65 @@
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">やることを記録しよう！</h1>
-    <%= form_tag("/posts/create") do %>
+    <h1 class="form-heading">備蓄スコア</h1>
     <div class="form">
       <div class="form-body">
-        <textarea name = "content"></textarea>
-        <input type="submit" value="投稿">
+      <h2>フォームには数字を入力してください。</h2>
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
+      <%= form_tag("/posts/create") do %>
+      <p>何リットルの飲料水を備蓄していますか？</p>
+        <input name = "water" , value= "<%= @post.water %>">
+        <p>何食のレトルトご飯を備蓄していますか？</p>
+        <input name = "rice" , value= "<%= @post.rice %>">
+        <p>何個のレトルト食品を備蓄していますか？</p>
+        <input name = "food", value= "<%= @post.food %>">
+        <p>何缶の缶詰を備蓄していますか？</p>
+        <input name = "can", value= "<%= @post.can %>">
+        <p>調味料セットを備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "seasonal", value= "<%= @post.seasonal %>">
+        <p>何パックの乾麺を備蓄していますか？</p>
+        <input name = "ramen", value= "<%= @post.ramen %>">
+        <p>お菓子を備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "snack", value= "<%= @post.snack %>">
+        <p>何枚の除菌ウエットティッシュを備蓄していますか？</p>
+        <input name = "wettissue", value= "<%= @post.wettissue %>">
+        <p>何本のアルコールスプレーを備蓄していますか？</p>
+        <input name = "spray", value= "<%= @post.spray %>">
+        <p>何枚のマスクを備蓄していますか？</p>
+        <input name = "mask", value= "<%= @post.mask %>">
+        <p>救急箱を備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "box", value= "<%= @post.box %>">
+        <p>常備薬を備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "medicine", value= "<%= @post.medicine %>">
+        <p>何回分の簡易トイレを備蓄していますか？</p>
+        <input name = "toilet", value= "<%= @post.toilet %>">
+        <p>何個の生理用品を備蓄していますか？</p>
+        <input name = "period", value= "<%= @post.period %>">
+        <p>何本のラップを備蓄していますか？</p>
+        <input name = "wrappingfilm", value= "<%= @post.wrappingfilm %>">
+        <p>何箱のポリ袋を備蓄していますか？</p>
+        <input name = "plasticbags", value= "<%= @post.plasticbags %>">
+        <p>何本のアルミホイルを備蓄していますか？ </p>
+       <input name = "alumi", value= "<%= @post.alumi %>">
+        <p>何箱のビニール手袋を備蓄していますか？</p>
+        <input name = "plasticgloves", value= "<%= @post.plasticgloves %>">
+        <p>何ロールののトイレットペーパーを備蓄していますか？</p>
+        <input name = "toiletpaper", value= "<%= @post.toiletpaper %>">
+        <p>何箱のティッシュペーパーを備蓄していますか？</p>
+        <input name = "tissue", value= "<%= @post.tissue %>">
+        <p>懐中電灯を備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "light", value= "<%= @post.light %>">
+        <p>何本の乾電池を備蓄していますか？</p>
+        <input name = "battery", value= "<%= @post.battery %>">
+        <p>何個のガムテープを備蓄していますか？</p>
+        <input name = "tape", value= "<%= @post.tape %>">
+        <p>給水袋を備蓄していますか？ある場合は1、ない場合は0を記入してください</p>
+        <input name = "waterbag", value= "<%= @post.waterbag %>">
+       
+        <input type="submit" value="送信">
       </div>
       <% end %>
     </div>

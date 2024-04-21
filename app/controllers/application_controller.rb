@@ -19,5 +19,13 @@ class ApplicationController < ActionController::Base
           redirect_to("/posts/index")
         end
       end
+
+      def integer_string?(str)
+        Integer(str)
+        true
+      rescue ArgumentError
+        false
+      end
+      
     
 end

@@ -63,13 +63,13 @@
   }
   
   .user h2 {
-    font-size: 20px;
-    font-weight: 600;
+    font-size:40px;
+    font-weight: 300;
     line-height: 1.2;
   }
   
   .user p {
-    font-size: 13px;
+    font-size: 20px;
     margin-bottom: 15px;
   }
   
@@ -113,4 +113,9 @@
   /* users/new, users/edit ================================ */
   .users-form input {
     margin-bottom: 15px;
+  }
+
+  .post{
+
+    font-size: 50px;
   }

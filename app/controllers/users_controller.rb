@@ -9,6 +9,12 @@ class UsersController < ApplicationController
     
     def show
       @user = User.find_by(id: params[:id])
+      @post = Post.where(user_id: @current_user.id).order(created_at: :desc)
+      @like = Like.new(user_id: @current_user.id, post_id: params[:post_id])
+     @like.save
+
+     
+    
     end
     
     def new
@@ -20,7 +26,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id]= @user.id
       flash[:notice] = "ユーザー登録が完了しました"
-      redirect_to("/users/#{@user.id}")
+      redirect_to("/")
     else render ("users/new")
     end  
     end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TodoList</title>
+    <title>Safe Compus</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,20 +15,20 @@
   <body>
   <header>
       <div class="header-logo">
-      <%= link_to("TodoList","/") %>
+      <%= link_to("Safe Compass","/") %>
       </div>
       <ul class="header-menus">
       <% if @current_user %>
       <li>
             <!-- @current_userに書き換えてください -->
-            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+            <%= link_to("マイページ/過去の結果", "/users/#{@current_user.id}") %>
           </li>
       <!-- ログインしている状態でヘッダーに表示するHTMLを貼り付けてください -->
       <li>
-        <%= link_to("やること一覧", "/posts/index") %>
+        <%= link_to("備蓄プラン", "/posts/index") %>
       </li>
       <li>
-        <%= link_to("新しいやること", "/posts/new") %>
+        <%= link_to("備蓄スコア", "/posts/new") %>
       </li>
       
       <li>

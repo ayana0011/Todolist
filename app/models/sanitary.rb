@@ -1,0 +1,2 @@
+class Sanitary < ApplicationRecord
+end
